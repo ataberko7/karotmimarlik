@@ -1,14 +1,8 @@
 "use client";
 
-import { useMemo } from "react";
 import company from "@/data/company";
 
 export default function QuoteForm() {
-  const thankYouUrl = useMemo(
-    () => typeof window === "undefined" ? "" : `${window.location.origin}/tesekkurler`,
-    []
-  );
-
   return (
     <section id="teklif-al" className="relative overflow-hidden bg-[#344156] px-6 py-24 text-white md:py-28">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_15%,rgba(148,163,184,.3),transparent_34%),radial-gradient(circle_at_100%_100%,rgba(139,30,45,.23),transparent_42%)]" />
@@ -29,7 +23,7 @@ export default function QuoteForm() {
         <form action={`https://formsubmit.co/${company.email}`} method="POST" className="grid gap-5 rounded-3xl border border-white/25 bg-white/[.12] p-6 shadow-2xl shadow-slate-950/20 backdrop-blur-xl md:grid-cols-2 md:p-8">
           <input type="hidden" name="_subject" value="Yeni web sitesi teklif talebi | Karot Mimarlık" />
           <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_next" value={thankYouUrl} />
+          <input type="hidden" name="_next" value="https://karotmimarlik.vercel.app/tesekkurler" />
           <input type="hidden" name="_autoresponse" value="Talebiniz Karot Mimarlık ekibine ulaşmıştır. En kısa sürede sizinle iletişime geçeceğiz." />
           <div><label htmlFor="quote-name" className="text-sm font-semibold">Ad soyad *</label><input id="quote-name" name="Ad soyad" required autoComplete="name" className="mt-2 w-full rounded-xl border border-white/20 bg-slate-900/25 px-4 py-3 text-white outline-none transition placeholder:text-slate-300/50 focus:border-[#D46A76]" placeholder="Adınız ve soyadınız" /></div>
           <div><label htmlFor="quote-phone" className="text-sm font-semibold">Telefon *</label><input id="quote-phone" name="Telefon" required autoComplete="tel" type="tel" className="mt-2 w-full rounded-xl border border-white/20 bg-slate-900/25 px-4 py-3 text-white outline-none transition placeholder:text-slate-300/50 focus:border-[#D46A76]" placeholder="05XX XXX XX XX" /></div>
