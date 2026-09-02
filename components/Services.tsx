@@ -1,82 +1,50 @@
-import Image from "next/image";
 import Link from "next/link";
 
-const services = [
+const process = [
   {
-    title: "Braas Çatı Sistemleri",
-    description:
-      "Braas yetkili bayisi olarak kaliteli ve uzun ömürlü çatı sistemleri sunuyoruz.",
-    image: "/images/proje 1.jpg",
+    number: "01",
+    title: "Yerinde keşif",
+    description: "Çatı eğimi, mevcut katmanlar, su tahliyesi ve kritik birleşim noktalarını yerinde değerlendiriyoruz.",
   },
   {
-    title: "Çatı Yenileme",
-    description:
-      "Eski çatıların sökülmesi, yenilenmesi ve modern sistemlerle yeniden uygulanması.",
-    image: "/images/proje 2.jpg",
+    number: "02",
+    title: "Sistemi planlama",
+    description: "Kaplama, yalıtım, havalandırma ve yağmur suyu detaylarını yapının ihtiyaçlarına göre birlikte planlıyoruz.",
   },
   {
-    title: "Çatı İzolasyonu",
-    description:
-      "Su ve ısı yalıtımı çözümleri ile çatınızı dört mevsim koruyoruz.",
-    image: "/images/proje 3.jpg",
+    number: "03",
+    title: "Uygulama ve takip",
+    description: "Uygulama sürecini sahada takip ediyor; katmanlar ve birleşim detayları arasındaki uyumu kontrol ediyoruz.",
   },
 ];
 
 export default function Services() {
   return (
-    <section className="bg-white px-6 py-24">
+    <section className="relative overflow-hidden bg-slate-200 px-6 py-24 text-slate-900 md:py-28">
+      <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-[#8B1E2D]/10 blur-3xl" />
+      <div className="absolute -right-28 bottom-0 h-80 w-80 rounded-full bg-slate-500/20 blur-3xl" />
       <div className="mx-auto max-w-7xl">
-        {/* Başlık */}
-        <div>
-          <p className="font-semibold uppercase tracking-[0.2em] text-orange-500">
-            Hizmetlerimiz
-          </p>
 
-          <h2 className="mt-4 text-4xl font-bold text-slate-900 md:text-5xl">
-            Profesyonel çatı çözümleri
-          </h2>
+        <div className="relative grid gap-12 lg:grid-cols-[.85fr_1.15fr] lg:items-end">
+          <div>
+            <p className="font-semibold uppercase tracking-[.22em] text-[#8B1E2D]">Keşiften teslimata</p>
+            <h2 className="mt-4 max-w-xl text-4xl font-bold leading-tight md:text-5xl">Nitelikli bir çatı, doğru analiz ve planlamayla başlar.</h2>
+            <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">Her yapının ihtiyacı farklıdır. Mevcut koşulları yerinde değerlendiriyor; malzeme seçimi ve uygulama detaylarını bu teknik veriye göre oluşturuyoruz.</p>
+            <Link href="/hizmetler" className="mt-8 inline-flex items-center gap-3 rounded-full border border-[#8B1E2D]/30 bg-white/45 px-6 py-3 font-semibold text-[#8B1E2D] backdrop-blur-sm transition hover:bg-[#8B1E2D] hover:text-white">
+              Tüm hizmetleri incele <span aria-hidden="true">→</span>
+            </Link>
+          </div>
 
-          <p className="mt-4 max-w-2xl text-lg text-slate-600">
-            Antalya ve çevre illerde sunduğumuz profesyonel çatı çözümleri.
-          </p>
-        </div>
-
-        {/* Hizmet kartları */}
-        <div className="mt-12 grid gap-8 md:grid-cols-3">
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
-            >
-              {/* Fotoğraf */}
-              <div className="relative h-64 w-full">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-cover transition duration-500 hover:scale-105"
-                />
-              </div>
-
-              {/* İçerik */}
-              <div className="p-8">
-                <h3 className="text-2xl font-semibold text-slate-900">
-                  {service.title}
-                </h3>
-
-                <p className="mt-4 leading-7 text-slate-600">
-                  {service.description}
-                </p>
-
-                <Link
-                  href="/hizmetler"
-                  className="mt-6 inline-block font-semibold text-orange-500 transition hover:text-orange-600"
-                >
-                  Detaylı Bilgi →
-                </Link>
-              </div>
-            </div>
-          ))}
+          <div className="grid gap-4 sm:grid-cols-3">
+            {process.map((item) => (
+              <article key={item.number} className="rounded-2xl border border-white/60 bg-white/40 p-6 shadow-sm backdrop-blur-md transition hover:-translate-y-1 hover:bg-white/55">
+                <span className="font-bold tracking-[.18em] text-[#8B1E2D]">{item.number}</span>
+                <div className="mt-6 h-px w-10 bg-[#8B1E2D]/45" />
+                <h3 className="mt-5 text-xl font-bold">{item.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{item.description}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>

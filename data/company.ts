@@ -23,6 +23,7 @@ const company = {
     "Braas Çatı Sistemleri",
     "Çatı Yapımı",
     "Çatı Yenileme",
+    "Çelik Çatı Konstrüksiyonu",
     "Su Yalıtımı",
     "Isı Yalıtımı",
   ],

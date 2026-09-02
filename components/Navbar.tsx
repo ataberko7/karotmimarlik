@@ -1,58 +1,75 @@
+"use client";
+
+import Image from "next/image";
 import Link from "next/link";
 import company from "@/data/company";
+import LanguageToggle from "@/components/LanguageToggle";
 
 export default function Navbar() {
   return (
-    <header className="absolute left-0 top-0 z-50 w-full">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
-        
-        {/* Logo */}
-        <Link href="/" className="block">
-          <h2 className="text-2xl font-bold text-white">
-            {company.name}
-          </h2>
+    <header
+      className="absolute left-0 top-0 z-[100] w-full border-b border-white/10 bg-slate-950/15 backdrop-blur-sm"
+    >
+      <div className="relative mx-auto flex h-[90px] max-w-7xl items-center px-6">
 
-          <p className="text-xs text-orange-500">
-            {company.slogan}
-          </p>
+        {/* Logo */}
+        <Link href="/" className="shrink-0">
+          <Image
+            src="/images/logo.png"
+            alt="Karot Mimarlık"
+            width={180}
+            height={70}
+            className="h-auto w-[135px] object-contain md:w-[155px]"
+            priority
+          />
         </Link>
 
         {/* Menü */}
-        <nav className="hidden items-center gap-8 text-white md:flex">
+        <nav className="ml-auto mr-auto flex items-center gap-8 whitespace-nowrap text-sm font-medium text-white">
           <Link
             href="/"
-            className="transition hover:text-orange-500"
+            className="transition-colors hover:text-[#B52A3A]"
           >
             Ana Sayfa
           </Link>
 
           <Link
             href="/hizmetler"
-            className="transition hover:text-orange-500"
+            className="transition-colors hover:text-[#B52A3A]"
           >
             Hizmetler
           </Link>
 
           <Link
             href="/projeler"
-            className="transition hover:text-orange-500"
+            className="transition-colors hover:text-[#B52A3A]"
           >
             Projeler
           </Link>
 
           <Link
             href="/hakkimizda"
-            className="transition hover:text-orange-500"
+            className="transition-colors hover:text-[#B52A3A]"
           >
             Hakkımızda
           </Link>
 
           <Link
+            href="/kataloglar"
+            className="transition-colors hover:text-[#B52A3A]"
+          >
+            Kataloglar
+          </Link>
+
+          <Link
             href="/iletisim"
-            className="transition hover:text-orange-500"
+            className="transition-colors hover:text-[#B52A3A]"
           >
             İletişim
           </Link>
+
+          <span aria-hidden="true" className="h-5 w-px bg-white/25" />
+          <LanguageToggle />
         </nav>
 
         {/* WhatsApp */}
@@ -60,10 +77,11 @@ export default function Navbar() {
           href={`https://wa.me/${company.whatsapp}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full bg-orange-500 px-5 py-3 font-semibold text-white transition hover:bg-orange-600"
+          className="shrink-0 rounded-full bg-[#8B1E2D] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#721724]"
         >
           WhatsApp
         </a>
+
       </div>
     </header>
   );

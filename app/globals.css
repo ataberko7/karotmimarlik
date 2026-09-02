@@ -24,3 +24,29 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes award-float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-7px) scale(1.012); }
+}
+
+@keyframes award-shine {
+  0%, 70%, 100% { transform: translateX(-230%) skewX(-12deg); opacity: 0; }
+  12%, 28% { opacity: 1; }
+  42% { transform: translateX(480%) skewX(-12deg); opacity: 0; }
+}
+
+.award-float {
+  animation: award-float 6s ease-in-out infinite;
+}
+
+.award-shine {
+  animation: award-shine 8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .award-float,
+  .award-shine {
+    animation: none;
+  }
+}
