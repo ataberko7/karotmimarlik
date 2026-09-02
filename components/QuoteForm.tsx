@@ -1,8 +1,28 @@
 "use client";
 
-import company from "@/data/company";
+import { FormEvent, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function QuoteForm() {
+  const router = useRouter();
+  const [status, setStatus] = useState<"idle" | "sending" | "error">("idle");
+  const [error, setError] = useState("");
+
+  async function submitQuote(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setStatus("sending");
+    setError("");
+    const form = new FormData(event.currentTarget);
+    const response = await fetch("/api/teklif", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({
+      name: form.get("Ad soyad"), phone: form.get("Telefon"), email: form.get("email"), location: form.get("Proje konumu"),
+      service: form.get("Hizmet türü"), roofArea: form.get("Yaklaşık çatı alanı"), message: form.get("Proje detayları"),
+    }) });
+    if (response.ok) { router.push("/tesekkurler"); return; }
+    const result = await response.json().catch(() => ({}));
+    setError(result.error ?? "Talep gönderilemedi. Lütfen tekrar deneyin.");
+    setStatus("error");
+  }
+
   return (
     <section id="teklif-al" className="relative overflow-hidden bg-[#344156] px-6 py-24 text-white md:py-28">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_15%,rgba(148,163,184,.3),transparent_34%),radial-gradient(circle_at_100%_100%,rgba(139,30,45,.23),transparent_42%)]" />
@@ -20,11 +40,7 @@ export default function QuoteForm() {
           </div>
         </div>
 
-        <form action={`https://formsubmit.co/${company.email}`} method="POST" className="grid gap-5 rounded-3xl border border-white/25 bg-white/[.12] p-6 shadow-2xl shadow-slate-950/20 backdrop-blur-xl md:grid-cols-2 md:p-8">
-          <input type="hidden" name="_subject" value="Yeni web sitesi teklif talebi | Karot Mimarlık" />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_next" value="https://karotmimarlik.vercel.app/tesekkurler" />
-          <input type="hidden" name="_autoresponse" value="Talebiniz Karot Mimarlık ekibine ulaşmıştır. En kısa sürede sizinle iletişime geçeceğiz." />
+        <form onSubmit={submitQuote} className="grid gap-5 rounded-3xl border border-white/25 bg-white/[.12] p-6 shadow-2xl shadow-slate-950/20 backdrop-blur-xl md:grid-cols-2 md:p-8">
           <div><label htmlFor="quote-name" className="text-sm font-semibold">Ad soyad *</label><input id="quote-name" name="Ad soyad" required autoComplete="name" className="mt-2 w-full rounded-xl border border-white/20 bg-slate-900/25 px-4 py-3 text-white outline-none transition placeholder:text-slate-300/50 focus:border-[#D46A76]" placeholder="Adınız ve soyadınız" /></div>
           <div><label htmlFor="quote-phone" className="text-sm font-semibold">Telefon *</label><input id="quote-phone" name="Telefon" required autoComplete="tel" type="tel" className="mt-2 w-full rounded-xl border border-white/20 bg-slate-900/25 px-4 py-3 text-white outline-none transition placeholder:text-slate-300/50 focus:border-[#D46A76]" placeholder="05XX XXX XX XX" /></div>
           <div><label htmlFor="quote-email" className="text-sm font-semibold">E-posta *</label><input id="quote-email" name="email" required autoComplete="email" type="email" className="mt-2 w-full rounded-xl border border-white/20 bg-slate-900/25 px-4 py-3 text-white outline-none transition placeholder:text-slate-300/50 focus:border-[#D46A76]" placeholder="ornek@eposta.com" /></div>
@@ -33,8 +49,8 @@ export default function QuoteForm() {
           <div><label htmlFor="quote-size" className="text-sm font-semibold">Yaklaşık çatı alanı</label><select id="quote-size" name="Yaklaşık çatı alanı" defaultValue="" className="mt-2 w-full rounded-xl border border-white/20 bg-slate-900/25 px-4 py-3 text-white outline-none transition focus:border-[#D46A76]"><option value="" disabled>Seçiniz</option><option>0 - 100 m²</option><option>100 - 250 m²</option><option>250 - 500 m²</option><option>500 m² ve üzeri</option><option>Henüz bilmiyorum</option></select></div>
           <div className="md:col-span-2"><label htmlFor="quote-message" className="text-sm font-semibold">Proje detayları</label><textarea id="quote-message" name="Proje detayları" rows={5} className="mt-2 w-full resize-y rounded-xl border border-white/20 bg-slate-900/25 px-4 py-3 text-white outline-none transition placeholder:text-slate-300/50 focus:border-[#D46A76]" placeholder="Mevcut çatı durumu, beklentiniz veya paylaşmak istediğiniz diğer bilgiler..." /></div>
           <label className="flex items-start gap-3 text-xs leading-5 text-slate-300 md:col-span-2"><input type="checkbox" name="İletişim onayı" required className="mt-1 accent-[#8B1E2D]" />Paylaştığım bilgilerin teklif talebimin değerlendirilmesi ve benimle iletişime geçilmesi amacıyla kullanılmasını kabul ediyorum.</label>
-          <button type="submit" className="inline-flex justify-center rounded-xl bg-[#8B1E2D] px-6 py-3.5 font-semibold text-white transition hover:bg-[#721724] md:col-span-2">Teklif talebini gönder →</button>
-          <p className="text-center text-xs leading-5 text-slate-400 md:col-span-2">Talebiniz e-posta yoluyla ekibimize iletilir. İlk gönderimden sonra e-posta yönlendirmesini etkinleştirmeniz istenebilir.</p>
+          <button type="submit" disabled={status === "sending"} className="inline-flex justify-center rounded-xl bg-[#8B1E2D] px-6 py-3.5 font-semibold text-white transition hover:bg-[#721724] disabled:cursor-wait disabled:opacity-70 md:col-span-2">{status === "sending" ? "Gönderiliyor…" : "Teklif talebini gönder →"}</button>
+          {error ? <p role="alert" className="text-center text-sm text-[#ffd1d5] md:col-span-2">{error}</p> : <p className="text-center text-xs leading-5 text-slate-300 md:col-span-2">Talebiniz Karot Mimarlık ekibine doğrudan ve güvenli şekilde iletilir.</p>}
         </form>
       </div>
     </section>
