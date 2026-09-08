@@ -41,7 +41,8 @@ const services = [
     title: "Çelik Çatı Konstrüksiyonu",
     description:
       "Yapının statik gereksinimleri doğrultusunda; çelik taşıyıcı sistem, aşık yerleşimi ve bağlantı detaylarını uygulama sürecine uygun biçimde planlıyoruz.",
-    image: "/images/steel-roof-construction.png",
+    image: "/images/steel-roof-construction-v2.png",
+    imagePosition: "center 50%",
     details: ["Çelik taşıyıcı sistem kurulumu", "Aşık ve bağlantı detayları", "Kaplama sistemine uygun hazırlık"],
   },
   {
@@ -143,6 +144,7 @@ export default function Page() {
                     src={service.image}
                     alt={service.title}
                     fill
+                    style={{ objectPosition: service.imagePosition ?? "center" }}
                     className="object-cover transition duration-700 group-hover:scale-105"
                   />
 

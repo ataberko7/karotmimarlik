@@ -86,6 +86,7 @@ function applyLocale(locale: Locale) {
   const nodes: Text[] = [];
   while (walker.nextNode()) nodes.push(walker.currentNode as Text);
   nodes.forEach((node) => {
+    if (node.parentElement?.closest('[data-localized="true"]')) return;
     if (["SCRIPT", "STYLE"].includes(node.parentElement?.tagName ?? "")) return;
     const source = sourceText.get(node) ?? node.nodeValue ?? "";
     sourceText.set(node, source);

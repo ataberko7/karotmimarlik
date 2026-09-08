@@ -19,7 +19,7 @@ export default function Navbar() {
             alt="Karot Mimarlık"
             width={180}
             height={70}
-            className="h-auto w-[135px] object-contain md:w-[155px]"
+            className="brand-logo-readable h-auto w-[135px] object-contain md:w-[155px]"
             priority
           />
         </Link>

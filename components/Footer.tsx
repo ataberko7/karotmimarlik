@@ -24,7 +24,7 @@ export default function Footer() {
               alt={company.name}
               width={180}
               height={70}
-              className="h-auto w-40 object-contain"
+              className="brand-logo-readable h-auto w-40 object-contain"
             />
 
             <p className="mt-5 max-w-sm leading-7 text-slate-300">
