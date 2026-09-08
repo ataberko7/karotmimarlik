@@ -42,9 +42,9 @@ export default function ProjectsPage() {
   return (
     <main data-localized="true" lang={locale} className="bg-[#465164] text-white">
       <section className="relative isolate overflow-hidden pb-14 pt-36 md:pb-20 md:pt-44">
-        <Image src="/images/projects-roof-hero.png" alt="" fill priority sizes="100vw" className="object-cover object-[68%_center]" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(66,77,94,.96)_0%,rgba(66,77,94,.91)_31%,rgba(66,77,94,.34)_60%,rgba(66,77,94,.06)_100%)]" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#465164] to-transparent" />
+        <Image src="/images/projects-hero.png" alt="" fill priority sizes="100vw" className="object-cover brightness-125 saturate-75" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(62,72,88,.94)_0%,rgba(62,72,88,.79)_36%,rgba(62,72,88,.18)_72%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(0deg,#465164_0%,transparent_35%)]" />
         <div className="relative mx-auto max-w-7xl px-6">
           <p className="text-xs font-semibold tracking-[.24em] text-[#ffc2cb]">{t.label}</p>
           <h1 className="mt-7 max-w-2xl text-4xl font-semibold leading-[1.1] tracking-tight md:text-6xl lg:text-7xl">{t.title}<span className="mt-3 block text-[#f3d3d7]">{t.accent}</span></h1>
