@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import CookieConsent from "@/components/CookieConsent";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,8 +47,10 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "RoofingContractor", name: "Karot Mimarlık", url: "https://karotmimarlik.com", telephone: "+90 531 302 0479", email: "ataberk.orman07@gmail.com", address: { "@type": "PostalAddress", streetAddress: "Cumhuriyet Mah. Fatih Cad. No:49", addressLocality: "Muratpaşa", addressRegion: "Antalya", addressCountry: "TR" }, areaServed: "Antalya ve çevre iller" }) }} />
         <Navbar />
         <GoogleAnalytics />
+        <CookieConsent />
         {children}
         <Footer />
       </body>
