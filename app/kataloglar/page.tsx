@@ -1,6 +1,8 @@
 import Image from "next/image";
 import PrinciplesStrip from "@/components/PrinciplesStrip";
 
+export const metadata = { title: "Teknik Kataloglar | Karot Mimarlık", description: "Braas çatı sistemleri ürün ve uygulama kataloglarına erişin." };
+
 const sourceUrl = "https://www.bmigroup.com/tr/dokuman-kaynaklar/";
 
 const catalogs = [

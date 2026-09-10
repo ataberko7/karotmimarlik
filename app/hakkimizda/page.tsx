@@ -3,6 +3,8 @@ import Link from "next/link";
 import company from "@/data/company";
 import PrinciplesStrip from "@/components/PrinciplesStrip";
 
+export const metadata = { title: "Hakkımızda | Karot Mimarlık", description: "Karot Mimarlık’ın Antalya ve çevre illerdeki çatı uygulama deneyimi ve çalışma yaklaşımı." };
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-white text-slate-900">

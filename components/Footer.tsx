@@ -85,7 +85,7 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col gap-3 border-t border-white/15 pt-6 text-center text-sm text-slate-300 md:flex-row md:items-center md:justify-between md:text-left">
           <span>© {new Date().getFullYear()} {company.name}. Tüm hakları saklıdır.</span>
-          <span>Antalya&apos;da çatı sistemleri · Yenileme · Yalıtım</span>
+          <span className="flex flex-wrap items-center justify-center gap-3 md:justify-end"><span>Antalya&apos;da çatı sistemleri · Yenileme · Yalıtım</span><Link href="/gizlilik" className="text-[#f0b1bb] underline underline-offset-4 hover:text-white">Gizlilik ve KVKK</Link></span>
         </div>
         <p className="mt-4 max-w-4xl text-center text-xs leading-5 text-slate-300/80 md:text-left">
           Bu sitede yer alan metin, görsel, tasarım, marka ve diğer içerikler Karot Mimarlık&apos;a veya ilgili hak sahiplerine aittir. Yazılı izin olmaksızın kopyalanamaz, çoğaltılamaz ya da ticari amaçla kullanılamaz.

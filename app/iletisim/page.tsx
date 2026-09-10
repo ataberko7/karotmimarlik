@@ -2,6 +2,8 @@ import Image from "next/image";
 import company from "@/data/company";
 import PrinciplesStrip from "@/components/PrinciplesStrip";
 
+export const metadata = { title: "İletişim | Karot Mimarlık", description: "Karot Mimarlık ile çatı projeniz için ücretsiz keşif ve teklif görüşmesi başlatın." };
+
 export default function Page() {
   const whatsappNumber = company.whatsapp.replace(/\D/g, "");
 

@@ -2,6 +2,8 @@ import Image from "next/image";
 import company from "@/data/company";
 import PrinciplesStrip from "@/components/PrinciplesStrip";
 
+export const metadata = { title: "Çatı Hizmetleri | Karot Mimarlık", description: "Antalya’da Braas çatı sistemleri, yeni çatı yapımı, yenileme, çelik konstrüksiyon ve yalıtım hizmetleri." };
+
 const services = [
   {
     title: "Braas Çatı Sistemleri",
