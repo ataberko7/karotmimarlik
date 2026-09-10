@@ -1,8 +1,12 @@
+"use client";
 import Script from "next/script";
+import { useEffect, useState } from "react";
 
 export default function GoogleAnalytics() {
   const measurementId = process.env.NEXT_PUBLIC_GA_ID;
-  if (!measurementId) return null;
+  const [consent, setConsent] = useState(false);
+  useEffect(() => { const update = () => setConsent(localStorage.getItem("karot-cookie-consent") === "accepted"); update(); window.addEventListener("karot-cookie-consent", update); return () => window.removeEventListener("karot-cookie-consent", update); }, []);
+  if (!measurementId || !consent) return null;
   return (
     <>
       <Script src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`} strategy="afterInteractive" />
