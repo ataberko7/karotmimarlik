@@ -263,6 +263,8 @@ export default function Page() {
                     {company.address}
                   </p>
 
+                  <iframe title="Karot Mimarlık konumu" src="https://www.google.com/maps?q=Cumhuriyet+Mahallesi+Fatih+Caddesi+No%3A49+Muratpasa+Antalya&output=embed" loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="mt-4 h-20 w-full rounded-xl border border-white/15 opacity-80" />
+
                   <a
                     href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x14c38fee1646d92f:0x260d329cf6f47e98?sa=X&ved=1t:8290&ictx=111"
                     target="_blank"
@@ -346,21 +348,6 @@ export default function Page() {
           <div><p className="font-semibold uppercase tracking-[.2em] text-[#8B1E2D]">Keşif süreci</p><h2 className="mt-4 text-4xl font-bold leading-tight">Projenizi nasıl değerlendiriyoruz?</h2><p className="mt-5 text-lg leading-8 text-slate-600">İlk görüşmeden uygulama planına kadar, çatınızın mevcut koşullarını ve ihtiyaçlarını birlikte netleştiriyoruz.</p></div>
           <div className="grid gap-4 sm:grid-cols-3">
             {["İlk görüşme", "Yerinde inceleme", "Sistem önerisi"].map((title, index) => <div key={title} className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200"><span className="text-sm font-bold text-[#8B1E2D]">0{index + 1}</span><h3 className="mt-5 text-lg font-bold">{title}</h3><p className="mt-3 text-sm leading-6 text-slate-600">{index === 0 ? "İhtiyacınızı ve beklentinizi dinleriz." : index === 1 ? "Çatıdaki kritik noktaları yerinde inceleriz." : "Uygun malzeme ve uygulama detaylarını paylaşırız."}</p></div>)}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-slate-50 px-6 py-16 text-slate-900 md:py-20">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[.7fr_1.3fr] lg:items-center">
-          <div>
-            <p className="font-semibold uppercase tracking-[.2em] text-[#8B1E2D]">Bizi ziyaret edin</p>
-            <h2 className="mt-4 text-3xl font-bold leading-tight md:text-4xl">Antalya’daki ofisimize bekliyoruz.</h2>
-            <p className="mt-4 max-w-md text-base leading-7 text-slate-600">Çatı projenizi yüz yüze değerlendirmek için randevu oluşturabilirsiniz.</p>
-            <p className="mt-5 font-semibold text-slate-800">{company.address}</p>
-            <a href="https://www.google.com/maps/search/?api=1&query=Cumhuriyet+Mahallesi+Fatih+Caddesi+No%3A49+Muratpa%C5%9Fa+Antalya" target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex rounded-full bg-[#8B1E2D] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#721724]">Google Maps’te aç ↗</a>
-          </div>
-          <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
-            <iframe title="Karot Mimarlık konumu" src="https://www.google.com/maps?q=Cumhuriyet+Mahallesi+Fatih+Caddesi+No%3A49+Muratpasa+Antalya&output=embed" loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="h-[320px] w-full border-0 sm:h-[380px]" />
           </div>
         </div>
       </section>
