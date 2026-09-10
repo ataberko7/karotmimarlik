@@ -12,7 +12,7 @@ function subscribe(onChange: () => void) {
 }
 const copy = {
   tr: {
-    label: "PROJELER & REFERANSLAR", title: "Akdeniz’in seçkin yapılarında,", accent: "Karot deneyimi.",
+    label: "PROJELER & REFERANSLAR", title: "Akdeniz’in seçkin yapılarında,", accent: "Karot Mimarlık deneyimi.",
     intro: "Turizm tesislerinden özel konutlara, farklı ölçeklerdeki yapılara uzanan referanslarımızı keşfedin.",
     explore: "Otel referanslarını keşfet", fieldLink: "Sahadan detaylar", selected: "SEÇİLMİŞ REFERANSLAR", hotels: "Otel ve resort projeleri", all: "Tüm bölgeler", count: "otel referansı", view: "Görseli incele", close: "Kapat", source: "Fotoğraf kaynağı", current: "Güncel tesis adı",
     note: "Bu bölümdeki fotoğraflar tesislerin genel görünümünü tanıtır; gerçekleştirilen işin kapsamını veya uygulama tarihini göstermez. Saha fotoğraflarımız aşağıda ayrıca sunulmaktadır.",
@@ -21,7 +21,7 @@ const copy = {
     cta: "Bir sonraki projenizi birlikte planlayalım.", ctaText: "Yapınızın ihtiyaçlarını, uygulama seçeneklerini ve keşif sürecini ekibimizle değerlendirin.", contact: "Projenizi anlatın", catalogue: "Teknik kataloglar", official: "Tesisin resmi kaynağı ↗", archive: "Saha fotoğrafı", preview: "Tesis görünümü",
   },
   en: {
-    label: "PROJECTS & REFERENCES", title: "Karot expertise,", accent: "across the Mediterranean.",
+    label: "PROJECTS & REFERENCES", title: "Karot Architecture,", accent: "across the Mediterranean.",
     intro: "Explore our references across hospitality properties and private residences, with buildings of different scales and requirements.",
     explore: "Explore hotel references", fieldLink: "On-site details", selected: "SELECTED REFERENCES", hotels: "Hotels and resorts", all: "All regions", count: "hotel references", view: "View photograph", close: "Close", source: "Photo source", current: "Current hotel name",
     note: "These photographs show the properties’ general appearance, not the scope or date of our work. Our on-site photographs are presented separately below.",
