@@ -14,7 +14,7 @@ const copy = {
   tr: {
     label: "PROJELER & REFERANSLAR", title: "Akdeniz’in seçkin yapılarında,", accent: "Karot Mimarlık deneyimi.",
     intro: "Turizm tesislerinden özel konutlara, farklı ölçeklerdeki yapılara uzanan referanslarımızı keşfedin.",
-    explore: "Otel referanslarını keşfet", fieldLink: "Sahadan detaylar", selected: "SEÇİLMİŞ REFERANSLAR", hotels: "Otel ve resort projeleri", all: "Tüm bölgeler", count: "otel referansı", view: "Görseli incele", close: "Kapat", source: "Fotoğraf kaynağı", current: "Güncel tesis adı",
+    explore: "Otel referanslarını keşfet", fieldLink: "Sahadan detaylar", selected: "SEÇİLMİŞ REFERANSLAR", hotels: "Otel ve resort projeleri", all: "Tüm bölgeler", count: "seçilmiş otel referansı", view: "Görseli incele", close: "Kapat", source: "Fotoğraf kaynağı", current: "Güncel tesis adı",
     note: "Bu bölümdeki fotoğraflar tesislerin genel görünümünü tanıtır; gerçekleştirilen işin kapsamını veya uygulama tarihini göstermez. Saha fotoğraflarımız aşağıda ayrıca sunulmaktadır.",
     field: "UYGULAMA ARŞİVİ", fieldTitle: "İşçiliğin yakından görünümü.", fieldIntro: "Taşıyıcı sistemden kaplama altı hazırlığa ve tamamlanmış çatıya kadar, sahadaki farklı uygulama aşamaları.",
     fieldNames: ["Ahşap taşıyıcı sistem", "Kaplama altı hazırlık", "Tamamlanmış kiremit çatı"],
@@ -23,7 +23,7 @@ const copy = {
   en: {
     label: "PROJECTS & REFERENCES", title: "Karot Architecture,", accent: "across the Mediterranean.",
     intro: "Explore our references across hospitality properties and private residences, with buildings of different scales and requirements.",
-    explore: "Explore hotel references", fieldLink: "On-site details", selected: "SELECTED REFERENCES", hotels: "Hotels and resorts", all: "All regions", count: "hotel references", view: "View photograph", close: "Close", source: "Photo source", current: "Current hotel name",
+    explore: "Explore hotel references", fieldLink: "On-site details", selected: "SELECTED REFERENCES", hotels: "Hotels and resorts", all: "All regions", count: "selected hotel references", view: "View photograph", close: "Close", source: "Photo source", current: "Current hotel name",
     note: "These photographs show the properties’ general appearance, not the scope or date of our work. Our on-site photographs are presented separately below.",
     field: "ON-SITE ARCHIVE", fieldTitle: "A closer look at the workmanship.", fieldIntro: "Different stages of on-site work, from the supporting structure and roof preparation to the finished tiled roof.",
     fieldNames: ["Timber roof structure", "Roof preparation", "Completed tiled roof"],
@@ -81,7 +81,7 @@ export default function ProjectsPage() {
       </section>
       <section id="site-archive" className="scroll-mt-24 border-y border-white/15 bg-white/[.06] px-6 py-16 md:py-24">
         <div className="mx-auto max-w-7xl"><div className="grid gap-6 md:grid-cols-2 md:items-end"><div><p className="text-xs font-semibold tracking-[.22em] text-[#f0b1bb]">{t.field}</p><h2 className="mt-5 max-w-lg text-3xl font-semibold leading-tight md:text-5xl">{t.fieldTitle}</h2></div><p className="max-w-lg text-base leading-8 text-slate-100">{t.fieldIntro}</p></div>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">{["/images/proje11-clean.jpg", "/images/proje7.jpg", "/images/proje8.jpg"].map((src, index) => <figure key={src} className="overflow-hidden rounded-2xl border border-white/20 bg-white/5"><div className="relative aspect-[4/3]"><Image src={src} alt={t.fieldNames[index]} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" /></div><figcaption className="p-5"><span className="text-xs text-[#f0b1bb]">{t.archive}</span><h3 className="mt-2 text-lg font-semibold">{t.fieldNames[index]}</h3></figcaption></figure>)}</div>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">{["/images/proje11.jpg", "/images/proje7.jpg", "/images/proje8.jpg"].map((src, index) => <figure key={src} className="overflow-hidden rounded-2xl border border-white/20 bg-white/5"><div className="relative aspect-[4/3]"><Image src={src} alt={t.fieldNames[index]} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" /></div><figcaption className="p-5"><span className="text-xs text-[#f0b1bb]">{t.archive}</span><h3 className="mt-2 text-lg font-semibold">{t.fieldNames[index]}</h3></figcaption></figure>)}</div>
         </div>
       </section>
       <section className="px-6 py-16 md:py-24"><div className="mx-auto flex max-w-7xl flex-col justify-between gap-8 rounded-3xl border border-white/20 bg-[linear-gradient(120deg,rgba(255,255,255,.10),rgba(139,30,45,.15))] p-8 md:p-12 lg:flex-row lg:items-center"><div className="max-w-2xl"><h2 className="text-3xl font-semibold leading-tight md:text-4xl">{t.cta}</h2><p className="mt-4 max-w-lg leading-7 text-slate-100">{t.ctaText}</p></div><div className="flex shrink-0 flex-col gap-4"><Link href="/iletisim" className="rounded-full bg-[#8B1E2D] px-7 py-4 text-center text-sm font-semibold hover:bg-[#a92b3d]">{t.contact} ↗</Link><Link href="/kataloglar" className="text-center text-sm text-slate-200 underline underline-offset-4">{t.catalogue}</Link></div></div></section>

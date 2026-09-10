@@ -30,9 +30,12 @@ export default function Page() {
               </h1>
 
               <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-200">
-                {company.name}, {company.founded} yılından bu yana Antalya ve
-                çevre illerde yeni çatı, yenileme ve yalıtım uygulamalarını
-                proje gereksinimlerine uygun sistem yaklaşımıyla yürütmektedir.
+                {company.name} olarak {company.founded} yılından bu yana Antalya
+                ve çevre illerde yeni çatı, yenileme ve yalıtım uygulamalarını;
+                yapının ihtiyaçlarını, iklim koşullarını ve mimari hedeflerini
+                birlikte değerlendirerek yürütüyoruz. Her projede güvenilir
+                malzeme, doğru detay ve ölçülebilir işçilik kalitesini bir arada
+                sunmayı hedefliyoruz.
               </p>
 
               <div className="mt-9 flex flex-wrap gap-4">
@@ -56,7 +59,7 @@ export default function Page() {
             <div className="rounded-3xl border border-white/20 bg-slate-100/[.05] p-7 shadow-2xl shadow-black/10 backdrop-blur-md md:p-9">
               <p className="text-xs font-semibold uppercase tracking-[.2em] text-[#D46A76]">Karot Mimarlık yaklaşımı</p>
               <h2 className="mt-4 text-3xl font-bold leading-tight">Doğru detay, uzun ömürlü sonuç.</h2>
-              <p className="mt-4 max-w-md leading-7 text-slate-200">Her uygulamada çatıyı yalnızca kaplama değil; taşıyıcı, yalıtım, su tahliyesi ve bitiş detaylarıyla birlikte değerlendiriyoruz.</p>
+              <p className="mt-4 max-w-md leading-7 text-slate-200">Her uygulamada çatıyı yalnızca bir kaplama olarak değil; taşıyıcı sistem, yalıtım, su tahliyesi ve bitiş detaylarıyla birlikte değerlendiriyoruz.</p>
               <div className="mt-8 grid gap-3 sm:grid-cols-3">
                 <div className="rounded-2xl border border-white/15 bg-slate-950/10 p-4"><p className="text-2xl font-bold text-white">{company.experience}</p><p className="mt-1 text-xs leading-5 text-slate-300">Sektör deneyimi</p></div>
                 <div className="rounded-2xl border border-white/15 bg-slate-950/10 p-4"><p className="text-2xl font-bold text-white">30 YIL</p><p className="mt-1 text-xs leading-5 text-slate-300">Ürün özellikleri garantisi*</p></div>
