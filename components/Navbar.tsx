@@ -27,7 +27,7 @@ export default function Navbar() {
         </Link>
 
         {/* Menü */}
-        <nav className={`${open ? "flex" : "hidden"} absolute left-4 right-4 top-[68px] flex-col items-stretch gap-1 rounded-2xl border border-white/15 bg-[#344156]/95 p-3 text-sm font-medium text-white shadow-2xl backdrop-blur-xl sm:static sm:ml-auto sm:mr-auto sm:flex sm:flex-row sm:items-center sm:gap-8 sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none sm:backdrop-blur-none`}>
+        <nav className="absolute left-0 right-0 top-[76px] flex items-center gap-6 overflow-x-auto border-t border-white/10 bg-[#344156]/95 px-4 py-3 text-sm font-medium text-white shadow-xl backdrop-blur-xl sm:static sm:ml-auto sm:mr-auto sm:gap-8 sm:overflow-visible sm:border-0 sm:bg-transparent sm:px-0 sm:py-0 sm:shadow-none sm:backdrop-blur-none">
           <Link onClick={() => setOpen(false)}
             href="/"
             className="transition-colors hover:text-[#B52A3A]"
@@ -84,9 +84,6 @@ export default function Navbar() {
           WhatsApp
         </a>
 
-        <button type="button" aria-label={open ? "Menüyü kapat" : "Menüyü aç"} aria-expanded={open} onClick={() => setOpen(value => !value)} className="ml-auto inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/25 text-white sm:hidden">
-          <span className="sr-only">Menü</span><span aria-hidden="true" className="text-xl leading-none">{open ? "×" : "☰"}</span>
-        </button>
 
       </div>
     </header>
