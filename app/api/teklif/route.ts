@@ -47,5 +47,20 @@ export async function POST(request: Request) {
   if (!response.ok) {
     return NextResponse.json({ error: "Talep şu anda iletilemedi. Lütfen tekrar deneyin." }, { status: 502 });
   }
+
+  // Başvuruyu yapan kişiye otomatik alındı/onay e-postası gönder.
+  // Bu e-posta ekip bildiriminden bağımsız olarak en iyi çaba ile gönderilir.
+  await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      from,
+      to: [email],
+      subject: "Teklif talebiniz alındı — Karot Mimarlık",
+      text: `Merhaba ${name},\n\nTeklif talebiniz bize ulaştı. ${service} hizmeti için paylaştığınız bilgileri ekibimiz inceleyerek en kısa sürede sizinle iletişime geçecek.\n\nProje konumu: ${location}\nTelefon: ${phone}\n\nİlginiz için teşekkür ederiz.\nKarot Mimarlık\n${company.phone}\n${company.email}`,
+      html: `<div style="font-family:Arial,sans-serif;background:#f1f5f9;padding:32px"><div style="max-width:640px;margin:auto;background:#fff;border-radius:16px;overflow:hidden"><div style="background:#344156;padding:24px 28px;color:#fff"><p style="margin:0;color:#f0a4ac;font-size:12px;font-weight:bold;letter-spacing:2px">KAROT MİMARLIK</p><h1 style="margin:8px 0 0;font-size:24px">Talebiniz bize ulaştı</h1></div><div style="padding:28px;color:#334155;line-height:1.65"><p>Merhaba <strong>${escapeHtml(name)}</strong>,</p><p>Teklif talebinizi aldık. <strong>${escapeHtml(service)}</strong> hizmeti için paylaştığınız bilgileri ekibimiz inceleyerek en kısa sürede sizinle iletişime geçecek.</p><div style="margin:22px 0;padding:16px 18px;border-left:4px solid #8B1E2D;background:#f8fafc"><strong>Proje konumu:</strong> ${escapeHtml(location)}<br/><strong>Telefon:</strong> ${escapeHtml(phone)}</div><p>İlginiz için teşekkür ederiz.</p><p style="margin-bottom:0"><strong>Karot Mimarlık</strong><br/>${escapeHtml(company.phone)}<br/>${escapeHtml(company.email)}</p></div></div></div>`,
+    }),
+  }).catch(() => undefined);
+
   return NextResponse.json({ ok: true });
 }

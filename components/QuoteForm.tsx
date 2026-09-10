@@ -17,7 +17,11 @@ export default function QuoteForm() {
       name: form.get("Ad soyad"), phone: form.get("Telefon"), email: form.get("email"), location: form.get("Proje konumu"),
       service: form.get("Hizmet türü"), roofArea: form.get("Yaklaşık çatı alanı"), message: form.get("Proje detayları"),
     }) });
-    if (response.ok) { router.push("/tesekkurler"); return; }
+    if (response.ok) {
+      window.gtag?.("event", "generate_lead", { event_category: "engagement", event_label: "quote_form" });
+      router.push("/tesekkurler");
+      return;
+    }
     const result = await response.json().catch(() => ({}));
     setError(result.error ?? "Talep gönderilemedi. Lütfen tekrar deneyin.");
     setStatus("error");
