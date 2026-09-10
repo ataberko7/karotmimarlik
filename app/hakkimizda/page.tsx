@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import company from "@/data/company";
+import PrinciplesStrip from "@/components/PrinciplesStrip";
 
 export default function Page() {
   return (
@@ -340,6 +341,7 @@ export default function Page() {
         </div>
       </section>
 
+      <PrinciplesStrip message="Deneyim · Güvenilir işçilik · Uzun ömürlü çözümler" />
     </main>
   );
 }

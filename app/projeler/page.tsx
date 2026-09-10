@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState, useSyncExternalStore } from "react";
 import { hotelProjects } from "@/data/hotel-projects";
+import PrinciplesStrip from "@/components/PrinciplesStrip";
 
 function subscribe(onChange: () => void) {
   const observer = new MutationObserver(onChange);
@@ -88,6 +89,7 @@ export default function ProjectsPage() {
       <dialog ref={dialog} onClick={e => { if (e.target === e.currentTarget) dialog.current?.close(); }} className="fixed inset-0 m-auto max-h-[92dvh] w-[min(1100px,94vw)] overflow-auto rounded-2xl border border-white/25 bg-[#465164] p-0 text-white shadow-2xl backdrop:bg-black/70 backdrop:backdrop-blur-sm" aria-label={selected?.name ?? t.view}>
         {selected && <><div className="flex items-center justify-between gap-4 p-5"><div><h2 className="text-lg font-semibold">{selected.name}</h2><p className="mt-1 text-xs text-slate-200">{selected.location}</p></div><button type="button" autoFocus onClick={() => dialog.current?.close()} className="rounded-full border border-white/30 px-4 py-2 text-sm hover:bg-white/10">{t.close} ×</button></div><div className="relative h-[min(58dvh,650px)] bg-black/15"><Image src={selected.image} alt={`${selected.name} — ${t.preview}`} fill sizes="94vw" className="object-contain" /></div><div className="p-5"><p className="text-xs leading-5 text-slate-200">{t.note}</p><a className="mt-3 inline-block text-sm text-[#ffc2cb] underline underline-offset-4" href={selected.source} target="_blank" rel="noopener noreferrer">{t.official}</a></div></>}
       </dialog>
+      <PrinciplesStrip message="Gerçek referanslar · Teknik detay · Karot Mimarlık deneyimi" />
     </main>
   );
 }

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import company from "@/data/company";
+import PrinciplesStrip from "@/components/PrinciplesStrip";
 
 const services = [
   {
@@ -219,6 +220,7 @@ export default function Page() {
         </div>
       </section>
 
+      <PrinciplesStrip message="Keşif · Sistem planlama · Titiz uygulama" />
     </main>
   );
 }

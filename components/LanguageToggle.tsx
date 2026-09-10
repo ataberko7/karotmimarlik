@@ -64,6 +64,14 @@ Object.assign(en, {
   "Yağmur suyunun kontrollü toplanması ve yapıdan uzaklaştırılması için elemanlar.": "Components for controlled collection and drainage of rainwater away from the building."
 });
 
+Object.assign(en, {
+  "Keşif · Sistem planlama · Titiz uygulama": "Survey · System planning · Precise installation",
+  "Deneyim · Güvenilir işçilik · Uzun ömürlü çözümler": "Experience · Reliable workmanship · Long-lasting solutions",
+  "Teknik doküman · Doğru ürün · Bilinçli uygulama": "Technical documents · Right products · Informed installation",
+  "Gerçek referanslar · Teknik detay · Karot Mimarlık deneyimi": "Real references · Technical detail · The Karot Architecture experience",
+  "Hızlı iletişim · Ücretsiz keşif · Net çözüm": "Quick contact · Free survey · Clear solution",
+});
+
 const sourceText = new WeakMap<Text, string>();
 const sourceAttributes = new WeakMap<Element, Record<string, string>>();
 const normalise = (value: string) => value.replace(/\s+/g, " ").trim();

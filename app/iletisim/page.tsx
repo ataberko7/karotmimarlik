@@ -1,5 +1,6 @@
 import Image from "next/image";
 import company from "@/data/company";
+import PrinciplesStrip from "@/components/PrinciplesStrip";
 
 export default function Page() {
   const whatsappNumber = company.whatsapp.replace(/\D/g, "");
@@ -349,6 +350,7 @@ export default function Page() {
         </div>
       </section>
 
+      <PrinciplesStrip message="Hızlı iletişim · Ücretsiz keşif · Net çözüm" />
     </main>
   );
 }

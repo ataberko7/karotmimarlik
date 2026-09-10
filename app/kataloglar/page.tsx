@@ -1,4 +1,5 @@
 import Image from "next/image";
+import PrinciplesStrip from "@/components/PrinciplesStrip";
 
 const sourceUrl = "https://www.bmigroup.com/tr/dokuman-kaynaklar/";
 
@@ -47,6 +48,7 @@ export default function CatalogsPage() {
           </div>
         </div>
       </section>
+      <PrinciplesStrip message="Teknik doküman · Doğru ürün · Bilinçli uygulama" />
     </main>
   );
 }
