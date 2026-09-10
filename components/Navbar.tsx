@@ -7,7 +7,7 @@ import LanguageToggle from "@/components/LanguageToggle";
 import { useState } from "react";
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
+  const [, setOpen] = useState(false);
   return (
     <header
       className="absolute left-0 top-0 z-[100] w-full border-b border-white/10 bg-slate-950/15 backdrop-blur-sm"
