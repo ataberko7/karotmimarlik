@@ -63,7 +63,7 @@ export default function ProjectsPage() {
       <section id="hotel-references" className="scroll-mt-28 px-6 py-14 md:py-20">
         <div className="mx-auto max-w-7xl">
           <p className="text-xs font-semibold tracking-[.22em] text-[#f0b1bb]">{t.selected}</p>
-          <div className="mt-4 flex flex-wrap items-end justify-between gap-5"><h2 className="text-3xl font-semibold tracking-tight md:text-5xl">{t.hotels}</h2><span aria-live="polite" className="text-sm text-slate-200">{filtered.length} {t.count}</span></div>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-5xl">{t.hotels}</h2>
           <div role="group" aria-label={t.all} className="mt-8 flex flex-wrap gap-2 border-b border-white/15 pb-8">
             {["all", ...regions].map(item => <button key={item} type="button" aria-pressed={region === item} onClick={() => setRegion(item)} className={`rounded-full border px-5 py-2.5 text-sm transition focus-visible:outline-2 focus-visible:outline-offset-4 ${region === item ? "border-[#c87985] bg-[#8B1E2D] text-white" : "border-white/20 bg-white/5 text-slate-100 hover:bg-white/15"}`}>{item === "all" ? t.all : item}</button>)}
           </div>
