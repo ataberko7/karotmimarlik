@@ -263,8 +263,6 @@ export default function Page() {
                     {company.address}
                   </p>
 
-                  <iframe title="Karot Mimarlık konumu" src="https://www.google.com/maps?q=Cumhuriyet+Mahallesi+Fatih+Caddesi+No%3A49+Muratpasa+Antalya&output=embed" loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="mt-4 h-20 w-full rounded-xl border border-white/15 opacity-80" />
-
                   <a
                     href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x14c38fee1646d92f:0x260d329cf6f47e98?sa=X&ved=1t:8290&ictx=111"
                     target="_blank"
