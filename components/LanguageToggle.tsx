@@ -24,6 +24,21 @@ const en: Record<string, string> = {
 };
 
 Object.assign(en, {
+  "Yasal bilgilendirme": "Legal information",
+  "Gizlilik ve KVKK": "Privacy and Data Protection",
+  "Karot Mimarlık olarak kişisel verilerinizin güvenliğini önemsiyoruz.": "At Karot Mimarlık, we take the security of your personal data seriously.",
+  "Toplanan bilgiler": "Information we collect",
+  "Teklif formu üzerinden paylaştığınız ad, telefon, e-posta, proje konumu ve proje detayları yalnızca talebinizi değerlendirmek ve sizinle iletişime geçmek amacıyla işlenir.": "Your name, phone number, email address, project location and project details are processed only to review your request and contact you.",
+  "Çerezler": "Cookies",
+  "Sitenin güvenli ve daha iyi bir deneyim sunması için çerezler kullanılabilir. Çerezler yalnızca onayınızdan sonra etkinleştirilir ve tercihinizi istediğiniz zaman değiştirebilirsiniz.": "Cookies may be used to keep the website secure and provide a better experience. They are enabled only after your consent, and you can change your preference at any time.",
+  "Haklarınız": "Your rights",
+  "Kişisel verilerinizle ilgili bilgi, düzeltme veya silme talepleriniz için": "For requests concerning access to, correction or deletion of your personal data, contact us at",
+  "Ana sayfaya dön ↗": "Return to home ↗",
+  "Sitemizi daha iyi kullanabilmeniz için çerezlere izin veriyoruz.": "We use cookies to make our website easier to use.",
+  "Çerezlere izin ver": "Allow cookies",
+});
+
+Object.assign(en, {
   "Kaplama": "Roof Covering", "Su ve Isı Yalıtımı": "Waterproofing and Thermal Insulation", "Mahya ve Detaylar": "Ridge and Detail Work", "Yağmur Suyu Yönetimi": "Rainwater Management",
   "Kiremit modeli; çatının eğimi, mimari dili ve iklim koşulları dikkate alınarak belirlenir.": "The tile profile is selected with the roof pitch, architectural character and local climate conditions in mind.",
   "Çatı altı katmanları, yoğuşma ve dış etken kaynaklı nem riskine karşı sistemin sürekliliğini destekler.": "Sub-roof layers support continuous system performance against condensation and moisture caused by external conditions.",
