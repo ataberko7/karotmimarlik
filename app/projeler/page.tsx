@@ -15,7 +15,7 @@ const copy = {
   tr: {
     label: "PROJELER & REFERANSLAR", title: "Akdeniz’in seçkin yapılarında,", accent: "Karot Mimarlık deneyimi.",
     intro: "Turizm tesislerinden özel konutlara, farklı ölçeklerdeki yapılara uzanan referanslarımızı keşfedin.",
-    explore: "Otel referanslarını keşfet", fieldLink: "Sahadan detaylar", selected: "SEÇİLMİŞ REFERANSLAR", hotels: "Otel ve resort projeleri", all: "Tüm bölgeler", count: "seçilmiş otel referansı", view: "Görseli incele", close: "Kapat", source: "Fotoğraf kaynağı", current: "Güncel tesis adı",
+    explore: "Otel referanslarını keşfet", fieldLink: "Sahadan detaylar", selected: "SEÇİLMİŞ REFERANSLAR", hotels: "Otel ve resort projeleri", all: "Tüm bölgeler", count: "özenle seçilmiş otel referansı", view: "Görseli incele", close: "Kapat", source: "Fotoğraf kaynağı", current: "Güncel tesis adı",
     note: "Bu bölümdeki fotoğraflar tesislerin genel görünümünü tanıtır; gerçekleştirilen işin kapsamını veya uygulama tarihini göstermez. Saha fotoğraflarımız aşağıda ayrıca sunulmaktadır.",
     field: "UYGULAMA ARŞİVİ", fieldTitle: "İşçiliğin yakından görünümü.", fieldIntro: "Taşıyıcı sistemden kaplama altı hazırlığa ve tamamlanmış çatıya kadar, sahadaki farklı uygulama aşamaları.",
     fieldNames: ["Ahşap taşıyıcı sistem", "Kaplama altı hazırlık", "Tamamlanmış kiremit çatı"],
@@ -24,7 +24,7 @@ const copy = {
   en: {
     label: "PROJECTS & REFERENCES", title: "Karot Architecture,", accent: "across the Mediterranean.",
     intro: "Explore our references across hospitality properties and private residences, with buildings of different scales and requirements.",
-    explore: "Explore hotel references", fieldLink: "On-site details", selected: "SELECTED REFERENCES", hotels: "Hotels and resorts", all: "All regions", count: "selected hotel references", view: "View photograph", close: "Close", source: "Photo source", current: "Current hotel name",
+    explore: "Explore hotel references", fieldLink: "On-site details", selected: "SELECTED REFERENCES", hotels: "Hotels and resorts", all: "All regions", count: "carefully selected hotel references", view: "View photograph", close: "Close", source: "Photo source", current: "Current hotel name",
     note: "These photographs show the properties’ general appearance, not the scope or date of our work. Our on-site photographs are presented separately below.",
     field: "ON-SITE ARCHIVE", fieldTitle: "A closer look at the workmanship.", fieldIntro: "Different stages of on-site work, from the supporting structure and roof preparation to the finished tiled roof.",
     fieldNames: ["Timber roof structure", "Roof preparation", "Completed tiled roof"],
@@ -54,9 +54,9 @@ export default function ProjectsPage() {
             <a href="#hotel-references" className="rounded-full bg-[#8B1E2D] px-6 py-4 text-sm font-semibold hover:bg-[#a92b3d]">{t.explore} ↘</a>
             <a href="#site-archive" className="rounded-full border border-white/30 bg-white/10 px-6 py-4 text-sm font-semibold backdrop-blur-md hover:bg-white/20">{t.fieldLink}</a>
           </div>
-          <div className="mt-16 flex flex-wrap items-end justify-between gap-5 border-t border-white/25 pt-6">
-            <div className="flex items-baseline gap-3"><span className="text-4xl font-light">{hotelProjects.length.toString().padStart(2, "0")}</span><span className="text-sm text-slate-200">{t.count}</span></div>
-            <p className="rounded-full border border-white/20 bg-[#465164]/60 px-4 py-2 text-xs text-slate-100 backdrop-blur">{locale === "tr" ? "Çatı sistemleri · Mimari detay · Uygulama" : "Roofing systems · Architectural detail · Installation"}</p>
+          <div className="mt-14 flex flex-col gap-5 rounded-2xl border border-white/20 bg-[#344156]/55 px-5 py-5 backdrop-blur-md sm:flex-row sm:items-center sm:justify-between sm:px-6">
+            <div className="flex items-center gap-4"><span className="text-4xl font-semibold tracking-tight text-white">{hotelProjects.length.toString().padStart(2, "0")}</span><span className="max-w-[12rem] text-sm leading-5 text-slate-200">{t.count}</span></div>
+            <p className="w-fit rounded-full border border-[#d79aa3]/45 bg-[#8B1E2D]/25 px-4 py-2 text-xs text-slate-100">{locale === "tr" ? "Çatı sistemleri · Mimari detay · Uygulama" : "Roofing systems · Architectural detail · Installation"}</p>
           </div>
         </div>
       </section>
