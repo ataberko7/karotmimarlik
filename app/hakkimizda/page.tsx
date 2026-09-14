@@ -36,9 +36,9 @@ export default function Page() {
                 {company.name} olarak {company.founded} yılından bu yana Antalya
                 ve çevre illerde yeni çatı, yenileme ve yalıtım uygulamalarını;
                 yapının ihtiyaçlarını, iklim koşullarını ve mimari hedeflerini
-                birlikte değerlendirerek yürütüyoruz. Her projede güvenilir
-                malzeme, doğru detay ve ölçülebilir işçilik kalitesini bir arada
-                sunmayı hedefliyoruz.
+                birlikte değerlendirerek planlıyor ve sahada uyguluyoruz. Her
+                projede doğru malzemeyi, nitelikli işçiliği ve uzun vadeli
+                performansı aynı sistem yaklaşımında buluşturuyoruz.
               </p>
 
               <div className="mt-9 flex flex-wrap gap-4">
@@ -101,14 +101,15 @@ export default function Page() {
                 </p>
 
                 <p>
-                  Her projede; ürün seçimi, uygulama yöntemi ve kritik birleşim
-                  detaylarını yapının koşullarına göre birlikte planlıyoruz.
+                  Her projede ürün seçimini, uygulama yöntemini ve kritik birleşim
+                  detaylarını yapının koşullarına göre birlikte planlıyor; kararlarımızı
+                  sahadaki teknik verilerle netleştiriyoruz.
                 </p>
 
                 <p>
-                  Antalya ve çevre illerde gerçekleştirdiğimiz çalışmalarda,
-                  mimari beklenti ile iklim koşullarını dengeli biçimde
-                  değerlendirmeye odaklanıyoruz.
+                  Antalya ve çevre illerdeki çalışmalarımızda mimari beklentiyi,
+                  iklim koşullarını ve kullanım konforunu dengeli biçimde
+                  değerlendirerek uygulanabilir çözümler üretiyoruz.
                 </p>
               </div>
             </div>

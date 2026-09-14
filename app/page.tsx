@@ -17,7 +17,7 @@ export default function Home() {
             <span className="h-px w-12 bg-white/65" />
             <p className="text-xs font-bold uppercase tracking-[.2em] text-white">Karot Mimarlık</p>
           </div>
-          <p className="text-xs font-medium text-slate-100">Doğru malzeme · Teknik uygulama · Uzun ömürlü çatı sistemleri</p>
+          <p className="text-xs font-medium text-slate-100">Doğru malzeme · Yetkin uygulama · Uzun ömürlü performans</p>
           <span className="hidden h-px w-12 bg-white/65 sm:block" />
         </div>
       </section>

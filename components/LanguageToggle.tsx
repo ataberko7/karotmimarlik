@@ -24,6 +24,7 @@ const en: Record<string, string> = {
 };
 
 Object.assign(en, {
+  "Doğru malzeme · Yetkin uygulama · Uzun ömürlü performans": "Right materials · Expert installation · Long-term performance",
   "Yasal bilgilendirme": "Legal information",
   "Gizlilik ve KVKK": "Privacy and Data Protection",
   "Karot Mimarlık olarak kişisel verilerinizin güvenliğini önemsiyoruz.": "At Karot Mimarlık, we take the security of your personal data seriously.",
