@@ -18,6 +18,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.karotmimarlik.com"),
+  icons: { icon: "/icon.svg", shortcut: "/icon.svg" },
   title: "Karot Mimarlık | Antalya Çatı Sistemleri",
   description:
     "Karot Mimarlık - Antalya ve çevre illerde profesyonel çatı sistemleri, yenileme ve izolasyon hizmetleri.",
