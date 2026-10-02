@@ -1,7 +1,7 @@
 export const hotelProjects = [
   { id: "belconti", name: "Belconti Resort Hotel", region: "Belek", location: "Belek · Antalya", row: 28, image: "/images/hotels/belconti.jpg", position: "65% center", source: "https://www.belconti.com/" },
   { id: "ic-green-palace", name: "IC Hotels Green Palace", region: "Lara / Kundu", location: "Kundu · Antalya", row: 7, image: "/images/hotels/ic-green-palace-aerial.jpg", position: "center 48%", source: "https://www.icholding.com.tr/tr/turizm/ProjeDetay/15" },
-  { id: "mardan-palace", name: "Mardan Palace", region: "Lara / Kundu", location: "Kundu · Antalya", row: 8, image: "/images/hotels/mardan-palace-aerial.jpg", position: "center 42%", source: "https://www.mardanpalace.com/" },
+  { id: "mardan-palace", name: "Mardan Palace", region: "Lara / Kundu", location: "Kundu · Antalya", row: 8, image: "/images/hotels/mardan-palace-aerial.webp", position: "center center", source: "https://www.mardanpalace.com/" },
   { id: "sirene-belek", name: "Sirene Belek Hotel", region: "Belek", location: "Belek · Antalya", row: 44, image: "/images/hotels/sirene-belek-aerial.jpg", position: "center 70%", source: "https://www.golf-escapes.com/hotel/sirene-belek-hotel/" },
   { id: "corendon-hydros-kemer", name: "Corendon Hydros Club Kemer", region: "Kemer", location: "Kemer · Antalya", row: 29, image: "/images/hotels/corendon-hydros-kemer-aerial.jpg", position: "center 52%", source: "https://www.corendon.nl/corendonhotels" },
   { id: "ela-excellence-belek", name: "Ela Excellence Resort Belek", region: "Belek", location: "Belek · Antalya", row: 21, image: "/images/hotels/ela-excellence-belek-aerial.png", position: "center center", source: "https://www.elahotels.com/" },
